@@ -1,17 +1,29 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using TechSales.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 namespace TechSales.WinForms
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            var services = new ServiceCollection();
+
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            services.AddSingleton<IConfiguration>(config);
+
+            services.AddDbContext<TechSalesDbContext>(options =>
+                options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+
+            var provider = services.BuildServiceProvider();
+
+            System.Windows.Forms.Application.Run(new MainForm());
         }
     }
 }
