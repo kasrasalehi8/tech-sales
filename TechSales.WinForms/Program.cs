@@ -1,4 +1,4 @@
-namespace TechSales
+namespace TechSales.WinForms
 {
     internal static class Program
     {

@@ -1,4 +1,4 @@
-namespace TechSales
+namespace TechSales.WinForms
 {
     public partial class Form1 : Form
     {

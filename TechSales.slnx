@@ -2,5 +2,5 @@
   <Project Path="TechSales.Application/TechSales.Application.csproj" Id="2481c586-6235-4347-a1b2-0d3ae27fc543" />
   <Project Path="TechSales.Domain/TechSales.Domain.csproj" Id="58008a27-06d3-43e3-9eda-bd3e6af31ba4" />
   <Project Path="TechSales.Infrastructure/TechSales.Infrastructure.csproj" Id="969a551b-7850-4f3a-96dd-8b5e105af812" />
-  <Project Path="TechSales/TechSales.WinForms.csproj" />
+  <Project Path="TechSales.WinForms/TechSales.WinForms.csproj" Id="5e216adb-d1b2-41f2-a7f0-558feff40fdd" />
 </Solution>
