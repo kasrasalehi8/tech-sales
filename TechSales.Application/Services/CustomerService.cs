@@ -29,7 +29,7 @@ namespace TechSales.Application.Services
         {
             if (string.IsNullOrWhiteSpace(customerDto.FullName))
             {
-                throw new ArgumentException("نام و نام خانوادگی را وارد کنید");
+                throw new ArgumentException("Please enter the name");
             }
 
             var customer = new Customer
@@ -47,19 +47,19 @@ namespace TechSales.Application.Services
         {
             if (customerDto.Id <= 0)
             {
-                throw new ArgumentException("مشتری یافت نشد");
+                throw new ArgumentException("Customer not found");
             }
 
             if (string.IsNullOrWhiteSpace(customerDto.FullName))
             {
-                throw new ArgumentException("نام و نام خانوادگی را وارد کنید");
+                throw new ArgumentException("Please enter the name");
             }
 
             var customer = _db.Customers.Find(customerDto.Id);
 
             if (customer == null)
             {
-                throw new Exception("مشتری یافت نشد");
+                throw new Exception("Customer not found");
             }
 
             customer.FullName = customerDto.FullName.Trim();
@@ -73,14 +73,14 @@ namespace TechSales.Application.Services
         {
             if (id <= 0)
             {
-                throw new ArgumentException("مشتری یافت نشد");
+                throw new ArgumentException("Customer not found");
             }
 
             var customer = _db.Customers.Find(id);
 
             if (customer == null)
             {
-                throw new Exception("مشتری یافت نشد");
+                throw new Exception("Customer not found");
             }
 
             if (customer == null)
