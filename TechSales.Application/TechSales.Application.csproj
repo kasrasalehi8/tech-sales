@@ -11,8 +11,4 @@
     <ProjectReference Include="..\TechSales.Infrastructure\TechSales.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
-
 </Project>

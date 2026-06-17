@@ -1,5 +1,6 @@
 ﻿using TechSales.Infrastructure.Entities;
 using TechSales.Infrastructure.Persistence;
+using TechSales.Application.DTO;
 
 namespace TechSales.Application.Services
 {
@@ -25,21 +26,63 @@ namespace TechSales.Application.Services
                 .FirstOrDefault(c => c.Id == id);
         }
 
-        public void Add(Customer customer)
+        public void Add(AddCustomerDto customerDto)
         {
+            if (string.IsNullOrWhiteSpace(customerDto.FullName))
+            {
+                throw new ArgumentException("نام و نام خانوادگی را وارد کنید");
+            }
+
+            var customer = new Customer
+            {
+                FullName = customerDto.FullName.Trim(),
+                Phone = customerDto.Phone?.Trim(),
+                Address = customerDto.Address?.Trim()
+            };
+
             _db.Customers.Add(customer);
             _db.SaveChanges();
         }
 
-        public void Update(Customer customer)
+        public void Update(UpdateCustomerDto customerDto)
         {
-            _db.Customers.Update(customer);
+            if (customerDto.Id <= 0)
+            {
+                throw new ArgumentException("مشتری یافت نشد");
+            }
+
+            if (string.IsNullOrWhiteSpace(customerDto.FullName))
+            {
+                throw new ArgumentException("نام و نام خانوادگی را وارد کنید");
+            }
+
+            var customer = _db.Customers.Find(customerDto.Id);
+
+            if (customer == null)
+            {
+                throw new Exception("مشتری یافت نشد");
+            }
+
+            customer.FullName = customerDto.FullName.Trim();
+            customer.Phone = customerDto.Phone?.Trim();
+            customer.Address = customerDto.Address?.Trim();
+
             _db.SaveChanges();
         }
 
         public void Delete(int id)
         {
+            if (id <= 0)
+            {
+                throw new ArgumentException("مشتری یافت نشد");
+            }
+
             var customer = _db.Customers.Find(id);
+
+            if (string.IsNullOrWhiteSpace(customer.FullName))
+            {
+                throw new ArgumentException("نام و نام خانوادگی را وارد کنید");
+            }
 
             if (customer == null)
                 return;
