@@ -79,9 +79,9 @@ namespace TechSales.Application.Services
 
             var customer = _db.Customers.Find(id);
 
-            if (string.IsNullOrWhiteSpace(customer.FullName))
+            if (customer == null)
             {
-                throw new ArgumentException("نام و نام خانوادگی را وارد کنید");
+                throw new Exception("مشتری یافت نشد");
             }
 
             if (customer == null)
