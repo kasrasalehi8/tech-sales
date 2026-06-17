@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TechSales.Domain\TechSales.Domain.csproj" />
+    <ProjectReference Include="..\TechSales.Infrastructure\TechSales.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DTO\" />
   </ItemGroup>
 
 </Project>
