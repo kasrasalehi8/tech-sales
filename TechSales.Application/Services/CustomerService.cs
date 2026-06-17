@@ -22,8 +22,7 @@ namespace TechSales.Application.Services
 
         public Customer? GetById(int id)
         {
-            return _db.Customers
-                .FirstOrDefault(c => c.Id == id);
+            return _db.Customers.Find(id);
         }
 
         public void Add(AddCustomerDto customerDto)
