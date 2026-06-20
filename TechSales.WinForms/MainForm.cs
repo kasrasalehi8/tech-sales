@@ -1,14 +1,32 @@
 using FontAwesome.Sharp;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using TechSales.Infrastructure.Persistence;
 using TechSales.WinForms.Forms;
 
 namespace TechSales.WinForms
 {
     public partial class MainForm : Form
     {
+        private readonly TechSalesDbContext _db;
+
         public MainForm()
         {
             InitializeComponent();
             InitializeMenu();
+
+            var config = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var connectionString = config.GetConnectionString("DefaultConnection");
+
+            var options = new DbContextOptionsBuilder<TechSalesDbContext>()
+                .UseSqlServer(connectionString)
+                .Options;
+
+            _db = new TechSalesDbContext(options);
 
             pnlDashboard.Click += PnlDashboard_Click;
             lblDashboard.Click += PnlDashboard_Click;
@@ -70,7 +88,7 @@ namespace TechSales.WinForms
 
         private void PnlDashboard_Click(object? sender, EventArgs e)
         {
-            LoadControl(new DashboardControl());
+            LoadControl(new DashboardControl(_db));
         }
 
         private void InitializeMenu()
@@ -89,7 +107,7 @@ namespace TechSales.WinForms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadControl(new DashboardControl());
+            LoadControl(new DashboardControl(_db));
         }
 
         private void label1_Click(object sender, EventArgs e)

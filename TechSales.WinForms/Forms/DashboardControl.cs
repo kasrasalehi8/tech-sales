@@ -7,21 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TechSales.Application.Services;
+using TechSales.Infrastructure.Persistence;
 
 namespace TechSales.WinForms.Forms
 {
     public partial class DashboardControl : UserControl
     {
-        public DashboardControl()
+        private readonly DashboardService _dashboardService;
+
+        public DashboardControl(TechSalesDbContext db)
         {
             InitializeComponent();
+
+            _dashboardService = new DashboardService(db);
 
             AutoScaleMode = AutoScaleMode.None;
 
             RegisterCardHover(pnlRevenue, Color.ForestGreen);
             RegisterCardHover(pnlCustomers, Color.LightSeaGreen);
-            RegisterCardHover(pnlOrders, Color.SlateBlue);
+            RegisterCardHover(pnlInvoices, Color.SlateBlue);
             RegisterCardHover(pnlProducts, Color.Crimson);
+
+            LoadDashboardData();
+        }
+
+        private void LoadDashboardData()
+        {
+            var stats = _dashboardService.GetStats();
+
+            lblRevenue.Text = stats.TotalRevenue.ToString("C");
+
+            lblCustomers.Text = stats.TotalCustomers.ToString();
+
+            lblInvoices.Text = stats.TotalInvoices.ToString();
+
+            lblProducts.Text = stats.TotalProducts.ToString();
         }
 
         private Color _defaultBack = Color.White;
@@ -64,6 +85,11 @@ namespace TechSales.WinForms.Forms
                         ResetHover();
                 };
             }
+        }
+
+        private void DashboardControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
