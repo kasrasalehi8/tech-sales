@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechSales.Application.Services;
 using TechSales.Infrastructure.Persistence;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace TechSales.WinForms.Forms
 {
@@ -16,11 +17,16 @@ namespace TechSales.WinForms.Forms
     {
         private readonly DashboardService _dashboardService;
 
+        private Chart? _salesChart;
+
         public DashboardControl(TechSalesDbContext db)
         {
             InitializeComponent();
 
             _dashboardService = new DashboardService(db);
+
+            InitializeChart();
+            LoadSampleChart();
 
             AutoScaleMode = AutoScaleMode.None;
 
@@ -46,6 +52,41 @@ namespace TechSales.WinForms.Forms
         }
 
         private Color _defaultBack = Color.White;
+
+        private void InitializeChart()
+        {
+            _salesChart = new Chart();
+
+            _salesChart.Dock = DockStyle.Fill;
+            _salesChart.BackColor = Color.White;
+
+            var chartArea = new ChartArea();
+
+            chartArea.BackColor = Color.White;
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.LineColor = Color.LightGray;
+
+            _salesChart.ChartAreas.Add(chartArea);
+
+            pnlAnalytics.Controls.Add(_salesChart);
+        }
+
+        private void LoadSampleChart()
+        {
+            var series = new Series("Revenue");
+
+            series.ChartType = SeriesChartType.Line;
+            series.BorderWidth = 3;
+            series.Color = Color.ForestGreen;
+
+            series.Points.AddXY("Jan", 1200);
+            series.Points.AddXY("Feb", 1800);
+            series.Points.AddXY("Mar", 2500);
+            series.Points.AddXY("Apr", 2100);
+            series.Points.AddXY("May", 3200);
+
+            _salesChart?.Series.Add(series);
+        }
 
         private Color Lighten(Color c, float factor)
         {
@@ -81,7 +122,7 @@ namespace TechSales.WinForms.Forms
                 c.MouseEnter += (s, e) => ApplyHover();
                 c.MouseLeave += (s, e) =>
                 {
-                    if (!panel.ClientRectangle.Contains(panel.PointToClient(Cursor.Position)))
+                    if (!panel.ClientRectangle.Contains(panel.PointToClient(System.Windows.Forms.Cursor.Position)))
                         ResetHover();
                 };
             }
