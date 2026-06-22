@@ -20,6 +20,20 @@ namespace TechSales.Application.Services
                 .ToList();
         }
 
+        public List<CustomerListDto> GetCustomerList()
+        {
+            return _db.Customers
+                .OrderBy(c => c.FullName)
+                .Select(c => new CustomerListDto
+                {
+                    Id = c.Id,
+                    FullName = c.FullName,
+                    Phone = c.Phone,
+                    Address = c.Address
+                })
+                .ToList();
+        }
+
         public Customer? GetById(int id)
         {
             return _db.Customers.Find(id);
@@ -67,6 +81,19 @@ namespace TechSales.Application.Services
             customer.Address = customerDto.Address?.Trim();
 
             _db.SaveChanges();
+        }
+
+        public List<Customer> Search(string term)
+        {
+            term = term?.Trim() ?? "";
+
+            return _db.Customers
+                .Where(c =>
+                    c.FullName.Contains(term) ||
+                    (c.Phone != null && c.Phone.Contains(term)) ||
+                    (c.Address != null && c.Address.Contains(term)))
+                .OrderBy(c => c.FullName)
+                .ToList();
         }
 
         public void Delete(int id)

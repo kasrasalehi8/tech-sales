@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using TechSales.Infrastructure.Persistence;
 using TechSales.WinForms.Forms;
+using TechSales.WinForms.Forms.Customer;
 
 namespace TechSales.WinForms
 {
@@ -35,6 +36,10 @@ namespace TechSales.WinForms
             pnlProduct.Click += PnlProduct_Click;
             lblProduct.Click += PnlProduct_Click;
             iconProduct.Click += PnlProduct_Click;
+
+            pnlCustomers.Click += PnlCustomers_Click;
+            lblCustomers.Click += PnlCustomers_Click;
+            iconCustomers.Click += PnlCustomers_Click;
 
             RegisterMenuHover(pnlDashboard);
             RegisterMenuHover(pnlProduct);
@@ -99,6 +104,12 @@ namespace TechSales.WinForms
         {
             LoadControl(new ProductsControl(_db));
         }
+
+        private void PnlCustomers_Click(object? sender, EventArgs e)
+        {
+            LoadControl(new CustomersControl(_db));
+        }
+
         private void InitializeMenu()
         {
             pnlDashboard.Text = "Dashboard";
