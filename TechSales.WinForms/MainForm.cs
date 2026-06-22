@@ -32,6 +32,10 @@ namespace TechSales.WinForms
             lblDashboard.Click += PnlDashboard_Click;
             iconDashboard.Click += PnlDashboard_Click;
 
+            pnlProduct.Click += PnlProduct_Click;
+            lblProduct.Click += PnlProduct_Click;
+            iconProduct.Click += PnlProduct_Click;
+
             RegisterMenuHover(pnlDashboard);
             RegisterMenuHover(pnlProduct);
             RegisterMenuHover(pnlCustomers);
@@ -91,6 +95,10 @@ namespace TechSales.WinForms
             LoadControl(new DashboardControl(_db));
         }
 
+        private void PnlProduct_Click(object? sender, EventArgs e)
+        {
+            LoadControl(new ProductsControl(_db));
+        }
         private void InitializeMenu()
         {
             pnlDashboard.Text = "Dashboard";

@@ -7,6 +7,15 @@
     <Compile Update="Forms\DashboardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Product\AddProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Product\ProductDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Product\ProductsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

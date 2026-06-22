@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechSales.Application.DTO;
 using TechSales.Infrastructure.Entities;
 using TechSales.Infrastructure.Persistence;
-using TechSales.Application.DTO;
 
 namespace TechSales.Application.Services
 {
@@ -28,7 +29,10 @@ namespace TechSales.Application.Services
 
         public Product? GetById(int id)
         {
-            return _db.Products.FirstOrDefault(p => p.Id == id && p.IsActive);
+            return _db.Products
+                .Include(p => p.Category)
+                .Include(p => p.Supplier)
+                .FirstOrDefault(p => p.Id == id && p.IsActive);
         }
 
         public void Add(AddProductDto productDto)
@@ -91,6 +95,60 @@ namespace TechSales.Application.Services
             product.IsActive = false;
 
             _db.SaveChanges();
+        }
+
+        public List<Category> GetCategories()
+        {
+            return _db.Categories
+                .OrderBy(c => c.Name)
+                .ToList();
+        }
+
+        public List<Supplier> GetSuppliers()
+        {
+            return _db.Suppliers
+                .OrderBy(s => s.CompanyName)
+                .ToList();
+        }
+
+        public List<ProductListDto> GetProductList()
+        {
+            return _db.Products
+                .Where(p => p.IsActive)
+                .OrderBy(p => p.Name)
+                .Select(p => new ProductListDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Category = p.Category.Name,
+                    Supplier = p.Supplier.CompanyName,
+                    Price = p.UnitPrice,
+                    Stock = p.StockQuantity,
+                    IsActive = p.IsActive
+                })
+                .ToList();
+        }
+
+        public List<ProductListDto> Search(string searchTerm)
+        {
+            searchTerm = searchTerm.Trim();
+
+            return _db.Products
+                .Where(p =>
+                    p.IsActive &&
+                    p.Name.Contains(searchTerm))
+                .OrderBy(p => p.Name)
+                .Select(p => new ProductListDto
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Category = p.Category.Name,
+                    Supplier = p.Supplier.CompanyName,
+                    Price = p.UnitPrice,
+                    Stock = p.StockQuantity,
+                    IsActive = p.IsActive
+                })
+                .ToList();
         }
 
         // Admin
