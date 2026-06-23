@@ -31,7 +31,7 @@
             sidebar = new Panel();
             pnlSuppliers = new Panel();
             lblSuppliers = new Label();
-            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            iconSuppliers = new FontAwesome.Sharp.IconPictureBox();
             pnlInvoices = new Panel();
             lblInvoices = new Label();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
@@ -54,7 +54,7 @@
             mainPanel = new Panel();
             sidebar.SuspendLayout();
             pnlSuppliers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconSuppliers).BeginInit();
             pnlInvoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             pnlCustomers.SuspendLayout();
@@ -82,17 +82,19 @@
             sidebar.Controls.Add(salesManagementDashboard);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
+            sidebar.Margin = new Padding(3, 2, 3, 2);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(176, 733);
+            sidebar.Size = new Size(154, 550);
             sidebar.TabIndex = 1;
             // 
             // pnlSuppliers
             // 
             pnlSuppliers.Controls.Add(lblSuppliers);
-            pnlSuppliers.Controls.Add(iconPictureBox3);
-            pnlSuppliers.Location = new Point(-1, 260);
+            pnlSuppliers.Controls.Add(iconSuppliers);
+            pnlSuppliers.Location = new Point(-1, 195);
+            pnlSuppliers.Margin = new Padding(3, 2, 3, 2);
             pnlSuppliers.Name = "pnlSuppliers";
-            pnlSuppliers.Size = new Size(176, 39);
+            pnlSuppliers.Size = new Size(154, 29);
             pnlSuppliers.TabIndex = 11;
             // 
             // lblSuppliers
@@ -100,33 +102,35 @@
             lblSuppliers.AutoSize = true;
             lblSuppliers.Font = new Font("Segoe UI Semibold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSuppliers.ForeColor = SystemColors.ControlLightLight;
-            lblSuppliers.Location = new Point(51, 11);
+            lblSuppliers.Location = new Point(45, 8);
             lblSuppliers.Name = "lblSuppliers";
-            lblSuppliers.Size = new Size(63, 17);
+            lblSuppliers.Size = new Size(47, 12);
             lblSuppliers.TabIndex = 3;
             lblSuppliers.Text = "Suppliers";
             // 
-            // iconPictureBox3
+            // iconSuppliers
             // 
-            iconPictureBox3.BackColor = Color.Transparent;
-            iconPictureBox3.ForeColor = SystemColors.ControlLightLight;
-            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Building;
-            iconPictureBox3.IconColor = SystemColors.ControlLightLight;
-            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 27;
-            iconPictureBox3.Location = new Point(18, 5);
-            iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(30, 27);
-            iconPictureBox3.TabIndex = 2;
-            iconPictureBox3.TabStop = false;
+            iconSuppliers.BackColor = Color.Transparent;
+            iconSuppliers.ForeColor = SystemColors.ControlLightLight;
+            iconSuppliers.IconChar = FontAwesome.Sharp.IconChar.Building;
+            iconSuppliers.IconColor = SystemColors.ControlLightLight;
+            iconSuppliers.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconSuppliers.IconSize = 20;
+            iconSuppliers.Location = new Point(16, 4);
+            iconSuppliers.Margin = new Padding(3, 2, 3, 2);
+            iconSuppliers.Name = "iconSuppliers";
+            iconSuppliers.Size = new Size(26, 20);
+            iconSuppliers.TabIndex = 2;
+            iconSuppliers.TabStop = false;
             // 
             // pnlInvoices
             // 
             pnlInvoices.Controls.Add(lblInvoices);
             pnlInvoices.Controls.Add(iconPictureBox2);
-            pnlInvoices.Location = new Point(0, 223);
+            pnlInvoices.Location = new Point(0, 167);
+            pnlInvoices.Margin = new Padding(3, 2, 3, 2);
             pnlInvoices.Name = "pnlInvoices";
-            pnlInvoices.Size = new Size(176, 39);
+            pnlInvoices.Size = new Size(154, 29);
             pnlInvoices.TabIndex = 10;
             // 
             // lblInvoices
@@ -134,9 +138,9 @@
             lblInvoices.AutoSize = true;
             lblInvoices.Font = new Font("Segoe UI Semibold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblInvoices.ForeColor = SystemColors.ControlLightLight;
-            lblInvoices.Location = new Point(51, 11);
+            lblInvoices.Location = new Point(45, 8);
             lblInvoices.Name = "lblInvoices";
-            lblInvoices.Size = new Size(57, 17);
+            lblInvoices.Size = new Size(42, 12);
             lblInvoices.TabIndex = 3;
             lblInvoices.Text = "Invoices";
             // 
@@ -147,10 +151,11 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
             iconPictureBox2.IconColor = SystemColors.ControlLightLight;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 27;
-            iconPictureBox2.Location = new Point(17, 5);
+            iconPictureBox2.IconSize = 20;
+            iconPictureBox2.Location = new Point(15, 4);
+            iconPictureBox2.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(30, 27);
+            iconPictureBox2.Size = new Size(26, 20);
             iconPictureBox2.TabIndex = 2;
             iconPictureBox2.TabStop = false;
             // 
@@ -158,9 +163,10 @@
             // 
             pnlCustomers.Controls.Add(lblCustomers);
             pnlCustomers.Controls.Add(iconCustomers);
-            pnlCustomers.Location = new Point(0, 185);
+            pnlCustomers.Location = new Point(0, 139);
+            pnlCustomers.Margin = new Padding(3, 2, 3, 2);
             pnlCustomers.Name = "pnlCustomers";
-            pnlCustomers.Size = new Size(176, 39);
+            pnlCustomers.Size = new Size(154, 29);
             pnlCustomers.TabIndex = 9;
             // 
             // lblCustomers
@@ -168,9 +174,9 @@
             lblCustomers.AutoSize = true;
             lblCustomers.Font = new Font("Segoe UI Semibold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCustomers.ForeColor = SystemColors.ControlLightLight;
-            lblCustomers.Location = new Point(51, 11);
+            lblCustomers.Location = new Point(45, 8);
             lblCustomers.Name = "lblCustomers";
-            lblCustomers.Size = new Size(73, 17);
+            lblCustomers.Size = new Size(53, 12);
             lblCustomers.TabIndex = 3;
             lblCustomers.Text = "Customers";
             // 
@@ -181,10 +187,11 @@
             iconCustomers.IconChar = FontAwesome.Sharp.IconChar.Users;
             iconCustomers.IconColor = SystemColors.ControlLightLight;
             iconCustomers.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconCustomers.IconSize = 27;
-            iconCustomers.Location = new Point(18, 5);
+            iconCustomers.IconSize = 20;
+            iconCustomers.Location = new Point(16, 4);
+            iconCustomers.Margin = new Padding(3, 2, 3, 2);
             iconCustomers.Name = "iconCustomers";
-            iconCustomers.Size = new Size(30, 27);
+            iconCustomers.Size = new Size(26, 20);
             iconCustomers.TabIndex = 2;
             iconCustomers.TabStop = false;
             // 
@@ -192,9 +199,10 @@
             // 
             pnlProduct.Controls.Add(lblProduct);
             pnlProduct.Controls.Add(iconProduct);
-            pnlProduct.Location = new Point(0, 148);
+            pnlProduct.Location = new Point(0, 111);
+            pnlProduct.Margin = new Padding(3, 2, 3, 2);
             pnlProduct.Name = "pnlProduct";
-            pnlProduct.Size = new Size(176, 39);
+            pnlProduct.Size = new Size(154, 29);
             pnlProduct.TabIndex = 9;
             // 
             // lblProduct
@@ -202,9 +210,9 @@
             lblProduct.AutoSize = true;
             lblProduct.Font = new Font("Segoe UI Semibold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProduct.ForeColor = SystemColors.ControlLightLight;
-            lblProduct.Location = new Point(51, 11);
+            lblProduct.Location = new Point(45, 8);
             lblProduct.Name = "lblProduct";
-            lblProduct.Size = new Size(62, 17);
+            lblProduct.Size = new Size(46, 12);
             lblProduct.TabIndex = 3;
             lblProduct.Text = "Products";
             // 
@@ -215,10 +223,11 @@
             iconProduct.IconChar = FontAwesome.Sharp.IconChar.Box;
             iconProduct.IconColor = SystemColors.ControlLightLight;
             iconProduct.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconProduct.IconSize = 27;
-            iconProduct.Location = new Point(18, 5);
+            iconProduct.IconSize = 20;
+            iconProduct.Location = new Point(16, 4);
+            iconProduct.Margin = new Padding(3, 2, 3, 2);
             iconProduct.Name = "iconProduct";
-            iconProduct.Size = new Size(30, 27);
+            iconProduct.Size = new Size(26, 20);
             iconProduct.TabIndex = 2;
             iconProduct.TabStop = false;
             // 
@@ -226,9 +235,10 @@
             // 
             pnlDashboard.Controls.Add(lblDashboard);
             pnlDashboard.Controls.Add(iconDashboard);
-            pnlDashboard.Location = new Point(0, 111);
+            pnlDashboard.Location = new Point(0, 83);
+            pnlDashboard.Margin = new Padding(3, 2, 3, 2);
             pnlDashboard.Name = "pnlDashboard";
-            pnlDashboard.Size = new Size(176, 39);
+            pnlDashboard.Size = new Size(154, 29);
             pnlDashboard.TabIndex = 8;
             // 
             // lblDashboard
@@ -236,9 +246,9 @@
             lblDashboard.AutoSize = true;
             lblDashboard.Font = new Font("Segoe UI Semibold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDashboard.ForeColor = SystemColors.ControlLightLight;
-            lblDashboard.Location = new Point(51, 11);
+            lblDashboard.Location = new Point(45, 8);
             lblDashboard.Name = "lblDashboard";
-            lblDashboard.Size = new Size(74, 17);
+            lblDashboard.Size = new Size(54, 12);
             lblDashboard.TabIndex = 3;
             lblDashboard.Text = "Dashboard";
             // 
@@ -249,10 +259,11 @@
             iconDashboard.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
             iconDashboard.IconColor = SystemColors.ControlLightLight;
             iconDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconDashboard.IconSize = 27;
-            iconDashboard.Location = new Point(18, 5);
+            iconDashboard.IconSize = 20;
+            iconDashboard.Location = new Point(16, 4);
+            iconDashboard.Margin = new Padding(3, 2, 3, 2);
             iconDashboard.Name = "iconDashboard";
-            iconDashboard.Size = new Size(30, 27);
+            iconDashboard.Size = new Size(26, 20);
             iconDashboard.TabIndex = 2;
             iconDashboard.TabStop = false;
             // 
@@ -263,10 +274,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Poll;
             iconPictureBox1.IconColor = SystemColors.ControlLightLight;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 29;
-            iconPictureBox1.Location = new Point(18, 13);
+            iconPictureBox1.IconSize = 22;
+            iconPictureBox1.Location = new Point(16, 10);
+            iconPictureBox1.Margin = new Padding(3, 2, 3, 2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(30, 29);
+            iconPictureBox1.Size = new Size(26, 22);
             iconPictureBox1.TabIndex = 6;
             iconPictureBox1.TabStop = false;
             // 
@@ -275,9 +287,9 @@
             TechSales.AutoSize = true;
             TechSales.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TechSales.ForeColor = SystemColors.ControlLightLight;
-            TechSales.Location = new Point(43, 9);
+            TechSales.Location = new Point(38, 7);
             TechSales.Name = "TechSales";
-            TechSales.Size = new Size(112, 30);
+            TechSales.Size = new Size(94, 25);
             TechSales.TabIndex = 5;
             TechSales.Text = "TechSales";
             // 
@@ -286,9 +298,9 @@
             mainMenu.AutoSize = true;
             mainMenu.Font = new Font("Segoe UI Semibold", 6F, FontStyle.Bold, GraphicsUnit.Point, 0);
             mainMenu.ForeColor = SystemColors.ControlLightLight;
-            mainMenu.Location = new Point(18, 88);
+            mainMenu.Location = new Point(16, 66);
             mainMenu.Name = "mainMenu";
-            mainMenu.Size = new Size(64, 12);
+            mainMenu.Size = new Size(50, 11);
             mainMenu.TabIndex = 3;
             mainMenu.Text = "MAIN MENU";
             // 
@@ -297,9 +309,9 @@
             salesManagementDashboard.AutoSize = true;
             salesManagementDashboard.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point, 0);
             salesManagementDashboard.ForeColor = SystemColors.ControlLightLight;
-            salesManagementDashboard.Location = new Point(18, 44);
+            salesManagementDashboard.Location = new Point(16, 33);
             salesManagementDashboard.Name = "salesManagementDashboard";
-            salesManagementDashboard.Size = new Size(133, 15);
+            salesManagementDashboard.Size = new Size(112, 12);
             salesManagementDashboard.TabIndex = 2;
             salesManagementDashboard.Text = "Sales Management App";
             // 
@@ -309,9 +321,10 @@
             topbar.Controls.Add(lblWelcomeText);
             topbar.Controls.Add(userIcon);
             topbar.Dock = DockStyle.Top;
-            topbar.Location = new Point(176, 0);
+            topbar.Location = new Point(154, 0);
+            topbar.Margin = new Padding(3, 2, 3, 2);
             topbar.Name = "topbar";
-            topbar.Size = new Size(806, 55);
+            topbar.Size = new Size(705, 41);
             topbar.TabIndex = 2;
             // 
             // lblWelcomeText
@@ -320,9 +333,9 @@
             lblWelcomeText.BackColor = Color.Transparent;
             lblWelcomeText.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWelcomeText.ForeColor = Color.FromArgb(3, 38, 53);
-            lblWelcomeText.Location = new Point(11, 9);
+            lblWelcomeText.Location = new Point(10, 7);
             lblWelcomeText.Name = "lblWelcomeText";
-            lblWelcomeText.Size = new Size(173, 32);
+            lblWelcomeText.Size = new Size(137, 25);
             lblWelcomeText.TabIndex = 1;
             lblWelcomeText.Text = "Welcome Back";
             lblWelcomeText.Click += label1_Click_2;
@@ -334,10 +347,11 @@
             userIcon.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
             userIcon.IconColor = Color.FromArgb(3, 38, 53);
             userIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            userIcon.IconSize = 49;
-            userIcon.Location = new Point(745, 5);
+            userIcon.IconSize = 37;
+            userIcon.Location = new Point(652, 4);
+            userIcon.Margin = new Padding(3, 2, 3, 2);
             userIcon.Name = "userIcon";
-            userIcon.Size = new Size(59, 49);
+            userIcon.Size = new Size(52, 37);
             userIcon.SizeMode = PictureBoxSizeMode.CenterImage;
             userIcon.TabIndex = 0;
             userIcon.TabStop = false;
@@ -346,21 +360,23 @@
             // mainPanel
             // 
             mainPanel.Dock = DockStyle.Fill;
-            mainPanel.Location = new Point(176, 55);
+            mainPanel.Location = new Point(154, 41);
+            mainPanel.Margin = new Padding(3, 2, 3, 2);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(806, 678);
+            mainPanel.Size = new Size(705, 509);
             mainPanel.TabIndex = 3;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
-            ClientSize = new Size(982, 733);
+            ClientSize = new Size(859, 550);
             Controls.Add(mainPanel);
             Controls.Add(topbar);
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MainForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
@@ -370,7 +386,7 @@
             sidebar.PerformLayout();
             pnlSuppliers.ResumeLayout(false);
             pnlSuppliers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconSuppliers).EndInit();
             pnlInvoices.ResumeLayout(false);
             pnlInvoices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
@@ -413,7 +429,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private Panel pnlSuppliers;
         private Label lblSuppliers;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconSuppliers;
         private Label lblWelcomeText;
     }
 }

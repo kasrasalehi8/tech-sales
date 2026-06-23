@@ -25,6 +25,15 @@
     <Compile Update="Forms\Product\ProductsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Supplier\AddSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Supplier\SupplierDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Supplier\SuppliersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

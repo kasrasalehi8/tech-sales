@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using TechSales.Infrastructure.Persistence;
 using TechSales.WinForms.Forms;
 using TechSales.WinForms.Forms.Customer;
+using TechSales.WinForms.Forms.Supplier;
 
 namespace TechSales.WinForms
 {
@@ -40,6 +41,10 @@ namespace TechSales.WinForms
             pnlCustomers.Click += PnlCustomers_Click;
             lblCustomers.Click += PnlCustomers_Click;
             iconCustomers.Click += PnlCustomers_Click;
+
+            pnlSuppliers.Click += PnlSuppliers_Click;
+            lblSuppliers.Click += PnlSuppliers_Click;
+            iconSuppliers.Click += PnlSuppliers_Click;
 
             RegisterMenuHover(pnlDashboard);
             RegisterMenuHover(pnlProduct);
@@ -108,6 +113,11 @@ namespace TechSales.WinForms
         private void PnlCustomers_Click(object? sender, EventArgs e)
         {
             LoadControl(new CustomersControl(_db));
+        }
+
+        private void PnlSuppliers_Click(object? sender, EventArgs e)
+        {
+            LoadControl(new SuppliersControl(_db));
         }
 
         private void InitializeMenu()
