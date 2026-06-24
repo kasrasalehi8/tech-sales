@@ -81,6 +81,7 @@
             dgvSuppliers.Size = new Size(666, 313);
             dgvSuppliers.TabIndex = 9;
             dgvSuppliers.CellDoubleClick += dgvSuppliers_CellDoubleClick;
+            dgvSuppliers.DataBindingComplete += dgvSuppliers_DataBindingComplete;
             // 
             // lblSearch
             // 

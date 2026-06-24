@@ -36,6 +36,11 @@ namespace TechSales.Application.Services
 
         public void Create(AddPaymentDto args)
         {
+            if (args.PaymentDate > DateTime.Now)
+            {
+                throw new Exception("Payment date cannot be in the future.");
+            }
+
             var invoice = _db.Invoices
                 .FirstOrDefault(i => i.Id == args.InvoiceId);
 
@@ -60,20 +65,20 @@ namespace TechSales.Application.Services
             {
                 InvoiceId = args.InvoiceId,
                 Amount = args.Amount,
-                PaymentDate = DateTime.Now
+                PaymentDate = args.PaymentDate
             };
 
             _db.Payments.Add(payment);
 
             invoice.PaidAmount += args.Amount;
 
-            if (invoice.PaidAmount == 0)
+            if (invoice.PaidAmount <= 0)
             {
                 invoice.Status = (int)InvoiceStatus.Unpaid;
             }
             else if (invoice.PaidAmount < invoice.TotalAmount)
             {
-                invoice.Status = (int)InvoiceStatus.PartiallyPaid;
+                invoice.Status = (int)InvoiceStatus.Partial;
             }
             else
             {

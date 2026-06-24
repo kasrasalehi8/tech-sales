@@ -34,7 +34,7 @@
             iconSuppliers = new FontAwesome.Sharp.IconPictureBox();
             pnlInvoices = new Panel();
             lblInvoices = new Label();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconInvoices = new FontAwesome.Sharp.IconPictureBox();
             pnlCustomers = new Panel();
             lblCustomers = new Label();
             iconCustomers = new FontAwesome.Sharp.IconPictureBox();
@@ -56,7 +56,7 @@
             pnlSuppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconSuppliers).BeginInit();
             pnlInvoices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconInvoices).BeginInit();
             pnlCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconCustomers).BeginInit();
             pnlProduct.SuspendLayout();
@@ -126,7 +126,7 @@
             // pnlInvoices
             // 
             pnlInvoices.Controls.Add(lblInvoices);
-            pnlInvoices.Controls.Add(iconPictureBox2);
+            pnlInvoices.Controls.Add(iconInvoices);
             pnlInvoices.Location = new Point(0, 167);
             pnlInvoices.Margin = new Padding(3, 2, 3, 2);
             pnlInvoices.Name = "pnlInvoices";
@@ -144,20 +144,20 @@
             lblInvoices.TabIndex = 3;
             lblInvoices.Text = "Invoices";
             // 
-            // iconPictureBox2
+            // iconInvoices
             // 
-            iconPictureBox2.BackColor = Color.Transparent;
-            iconPictureBox2.ForeColor = SystemColors.ControlLightLight;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
-            iconPictureBox2.IconColor = SystemColors.ControlLightLight;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 20;
-            iconPictureBox2.Location = new Point(15, 4);
-            iconPictureBox2.Margin = new Padding(3, 2, 3, 2);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(26, 20);
-            iconPictureBox2.TabIndex = 2;
-            iconPictureBox2.TabStop = false;
+            iconInvoices.BackColor = Color.Transparent;
+            iconInvoices.ForeColor = SystemColors.ControlLightLight;
+            iconInvoices.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
+            iconInvoices.IconColor = SystemColors.ControlLightLight;
+            iconInvoices.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconInvoices.IconSize = 20;
+            iconInvoices.Location = new Point(15, 4);
+            iconInvoices.Margin = new Padding(3, 2, 3, 2);
+            iconInvoices.Name = "iconInvoices";
+            iconInvoices.Size = new Size(26, 20);
+            iconInvoices.TabIndex = 2;
+            iconInvoices.TabStop = false;
             // 
             // pnlCustomers
             // 
@@ -389,7 +389,7 @@
             ((System.ComponentModel.ISupportInitialize)iconSuppliers).EndInit();
             pnlInvoices.ResumeLayout(false);
             pnlInvoices.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconInvoices).EndInit();
             pnlCustomers.ResumeLayout(false);
             pnlCustomers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconCustomers).EndInit();
@@ -426,7 +426,7 @@
         private FontAwesome.Sharp.IconPictureBox iconCustomers;
         private Panel pnlInvoices;
         private Label lblInvoices;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconInvoices;
         private Panel pnlSuppliers;
         private Label lblSuppliers;
         private FontAwesome.Sharp.IconPictureBox iconSuppliers;

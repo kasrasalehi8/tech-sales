@@ -1,4 +1,5 @@
-﻿using TechSales.Application.DTO;
+﻿using Microsoft.EntityFrameworkCore;
+using TechSales.Application.DTO;
 using TechSales.Domain.Enums;
 using TechSales.Infrastructure.Entities;
 using TechSales.Infrastructure.Persistence;
@@ -21,13 +22,149 @@ namespace TechSales.Application.Services
                 .ToList();
         }
 
+        public List<InvoiceListDto> GetAllForList()
+        {
+            return _db.Invoices
+                .OrderByDescending(i => i.InvoiceDate)
+                .Include(i => i.Customer)
+                .Select(i => new InvoiceListDto
+                {
+                    Id = i.Id,
+
+                    CustomerName =
+                        i.Customer.FullName,
+
+                    InvoiceDate =
+                        i.InvoiceDate,
+
+                    TotalAmount =
+                        i.TotalAmount,
+
+                    PaidAmount =
+                        i.PaidAmount,
+
+                    RemainingAmount =
+                        i.TotalAmount - i.PaidAmount,
+
+                    Status =
+                        ((InvoiceStatus)i.Status).ToString()
+                })
+                .ToList();
+        }
+
         public Invoice? GetById(int id)
         {
             return _db.Invoices.Find(id);
         }
 
+        public InvoiceDetailsDto? GetDetails(int invoiceId)
+        {
+            return _db.Invoices
+                .Include(i => i.Customer)
+                .Include(i => i.InvoiceItems)
+                    .ThenInclude(ii => ii.Product)
+                .Include(i => i.Payments)
+                .Where(i => i.Id == invoiceId)
+                .Select(i => new InvoiceDetailsDto
+                {
+                    Id = i.Id,
+
+                    CustomerName =
+                        i.Customer.FullName,
+
+                    InvoiceDate =
+                        i.InvoiceDate,
+
+                    TotalAmount =
+                        i.TotalAmount,
+
+                    PaidAmount =
+                        i.PaidAmount,
+
+                    RemainingAmount =
+                        i.TotalAmount - i.PaidAmount,
+
+                    Status =
+                        ((InvoiceStatus)i.Status).ToString(),
+
+                    Items =
+                        i.InvoiceItems
+                            .Select(ii => new InvoiceItemDetailsDto
+                            {
+                                ProductName = ii.Product.Name,
+                                UnitPrice = ii.UnitPrice,
+                                Quantity = ii.Quantity,
+                                LineTotal = ii.LineTotal
+                            })
+                            .ToList(),
+
+                    Payments =
+                        i.Payments
+                            .OrderByDescending(p => p.PaymentDate)
+                            .Select(p => new PaymentListDto
+                            {
+                                PaymentDate = p.PaymentDate,
+                                Amount = p.Amount
+                            })
+                            .ToList()
+                })
+                .FirstOrDefault();
+        }
+
+        public List<InvoiceListDto> Search(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return GetAllForList();
+            }
+
+            searchTerm = searchTerm.Trim().ToLower();
+
+            return _db.Invoices
+                .Include(i => i.Customer)
+                .Where(i =>
+                    i.Customer.FullName.ToLower().Contains(searchTerm) ||
+
+                    i.Id.ToString().Contains(searchTerm) ||
+
+                    ((InvoiceStatus)i.Status)
+                        .ToString()
+                        .ToLower()
+                        .Contains(searchTerm))
+                .OrderByDescending(i => i.InvoiceDate)
+                .Select(i => new InvoiceListDto
+                {
+                    Id = i.Id,
+
+                    CustomerName =
+                        i.Customer.FullName,
+
+                    InvoiceDate =
+                        i.InvoiceDate,
+
+                    TotalAmount =
+                        i.TotalAmount,
+
+                    PaidAmount =
+                        i.PaidAmount,
+
+                    RemainingAmount =
+                        i.TotalAmount - i.PaidAmount,
+
+                    Status =
+                        ((InvoiceStatus)i.Status).ToString()
+                })
+                .ToList();
+        }
+
         public void Create(AddInvoiceDto args)
         {
+            if (args.InvoiceDate > DateTime.Now)
+            {
+                throw new Exception(
+                    "Invoice date cannot be in the future.");
+            }
+
             var customer = _db.Customers.Find(args.CustomerId);
 
             if (customer == null)
@@ -93,7 +230,7 @@ namespace TechSales.Application.Services
             var invoice = new Invoice
             {
                 CustomerId = args.CustomerId,
-                InvoiceDate = DateTime.Now,
+                InvoiceDate = args.InvoiceDate,
                 TotalAmount = totalAmount,
                 PaidAmount = 0,
                 Status = (int)InvoiceStatus.Unpaid

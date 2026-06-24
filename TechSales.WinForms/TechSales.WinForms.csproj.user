@@ -16,6 +16,18 @@
     <Compile Update="Forms\DashboardControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Invoice\AddPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Invoice\CreateInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Invoice\InvoiceDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Invoice\InvoicesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Product\AddProductForm.cs">
       <SubType>Form</SubType>
     </Compile>

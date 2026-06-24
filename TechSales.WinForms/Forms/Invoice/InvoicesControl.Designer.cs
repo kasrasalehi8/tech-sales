@@ -1,6 +1,6 @@
-﻿namespace TechSales.WinForms.Forms.Customer
+﻿namespace TechSales.WinForms.Forms.Invoice
 {
-    partial class CustomersControl
+    partial class InvoicesControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,20 +30,20 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            dgvCustomers = new DataGridView();
+            dgvInvoices = new DataGridView();
             lblSearch = new Label();
-            btnAddCustomer = new Button();
-            lblCustomers = new Label();
+            btnCreateInvoice = new Button();
             txtSearch = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
+            lblInvoices = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvInvoices).BeginInit();
             SuspendLayout();
             // 
-            // dgvCustomers
+            // dgvInvoices
             // 
-            dgvCustomers.AllowUserToAddRows = false;
-            dgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCustomers.BackgroundColor = Color.White;
-            dgvCustomers.BorderStyle = BorderStyle.None;
+            dgvInvoices.AllowUserToAddRows = false;
+            dgvInvoices.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvInvoices.BackgroundColor = Color.White;
+            dgvInvoices.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -51,8 +51,8 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvInvoices.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F);
@@ -60,18 +60,19 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvCustomers.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCustomers.Location = new Point(18, 136);
-            dgvCustomers.MultiSelect = false;
-            dgvCustomers.Name = "dgvCustomers";
-            dgvCustomers.ReadOnly = true;
-            dgvCustomers.RowHeadersVisible = false;
-            dgvCustomers.RowHeadersWidth = 51;
-            dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomers.Size = new Size(666, 313);
-            dgvCustomers.TabIndex = 4;
-            dgvCustomers.CellDoubleClick += dgvCustomers_CellDoubleClick;
-            dgvCustomers.DataBindingComplete += dgvCustomers_DataBindingComplete;
+            dgvInvoices.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvInvoices.Location = new Point(18, 136);
+            dgvInvoices.MultiSelect = false;
+            dgvInvoices.Name = "dgvInvoices";
+            dgvInvoices.ReadOnly = true;
+            dgvInvoices.RowHeadersVisible = false;
+            dgvInvoices.RowHeadersWidth = 51;
+            dgvInvoices.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvInvoices.Size = new Size(666, 313);
+            dgvInvoices.TabIndex = 4;
+            dgvInvoices.CellDoubleClick += dgvInvoices_CellDoubleClick;
+            dgvInvoices.CellFormatting += dgvInvoices_CellFormatting;
+            dgvInvoices.DataBindingComplete += dgvInvoices_DataBindingComplete;
             // 
             // lblSearch
             // 
@@ -82,35 +83,24 @@
             lblSearch.Location = new Point(422, 96);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(76, 25);
-            lblSearch.TabIndex = 7;
+            lblSearch.TabIndex = 8;
             lblSearch.Text = "Search:";
             // 
-            // btnAddCustomer
+            // btnCreateInvoice
             // 
-            btnAddCustomer.BackColor = Color.FromArgb(3, 38, 53);
-            btnAddCustomer.Cursor = Cursors.Hand;
-            btnAddCustomer.FlatAppearance.BorderColor = Color.FromArgb(3, 38, 53);
-            btnAddCustomer.FlatAppearance.BorderSize = 0;
-            btnAddCustomer.FlatStyle = FlatStyle.Flat;
-            btnAddCustomer.ForeColor = Color.White;
-            btnAddCustomer.Location = new Point(18, 94);
-            btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(121, 29);
-            btnAddCustomer.TabIndex = 6;
-            btnAddCustomer.Text = "+ Add Customer";
-            btnAddCustomer.UseVisualStyleBackColor = false;
-            btnAddCustomer.Click += btnAddCustomer_Click;
-            // 
-            // lblCustomers
-            // 
-            lblCustomers.AutoSize = true;
-            lblCustomers.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCustomers.ForeColor = Color.FromArgb(3, 38, 53);
-            lblCustomers.Location = new Point(8, 23);
-            lblCustomers.Name = "lblCustomers";
-            lblCustomers.Size = new Size(153, 37);
-            lblCustomers.TabIndex = 5;
-            lblCustomers.Text = "Customers";
+            btnCreateInvoice.BackColor = Color.FromArgb(3, 38, 53);
+            btnCreateInvoice.Cursor = Cursors.Hand;
+            btnCreateInvoice.FlatAppearance.BorderColor = Color.FromArgb(3, 38, 53);
+            btnCreateInvoice.FlatAppearance.BorderSize = 0;
+            btnCreateInvoice.FlatStyle = FlatStyle.Flat;
+            btnCreateInvoice.ForeColor = Color.White;
+            btnCreateInvoice.Location = new Point(18, 94);
+            btnCreateInvoice.Name = "btnCreateInvoice";
+            btnCreateInvoice.Size = new Size(121, 29);
+            btnCreateInvoice.TabIndex = 7;
+            btnCreateInvoice.Text = "+ Create Invoice";
+            btnCreateInvoice.UseVisualStyleBackColor = false;
+            btnCreateInvoice.Click += btnCreateInvoice_Click;
             // 
             // txtSearch
             // 
@@ -119,31 +109,43 @@
             txtSearch.Location = new Point(500, 94);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(185, 29);
-            txtSearch.TabIndex = 8;
+            txtSearch.TabIndex = 6;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
-            // CustomersControl
+            // lblInvoices
+            // 
+            lblInvoices.AutoSize = true;
+            lblInvoices.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInvoices.ForeColor = Color.FromArgb(3, 38, 53);
+            lblInvoices.Location = new Point(8, 23);
+            lblInvoices.Name = "lblInvoices";
+            lblInvoices.Size = new Size(122, 37);
+            lblInvoices.TabIndex = 5;
+            lblInvoices.Text = "Invoices";
+            // 
+            // InvoicesControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
-            Controls.Add(txtSearch);
-            Controls.Add(dgvCustomers);
+            Controls.Add(dgvInvoices);
             Controls.Add(lblSearch);
-            Controls.Add(btnAddCustomer);
-            Controls.Add(lblCustomers);
-            Name = "CustomersControl";
+            Controls.Add(btnCreateInvoice);
+            Controls.Add(txtSearch);
+            Controls.Add(lblInvoices);
+            Name = "InvoicesControl";
             Size = new Size(725, 725);
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInvoices).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private DataGridView dgvCustomers;
+
+        private DataGridView dgvInvoices;
         private Label lblSearch;
-        private Button btnAddCustomer;
-        private Label lblCustomers;
+        private Button btnCreateInvoice;
         private TextBox txtSearch;
+        private Label lblInvoices;
     }
 }

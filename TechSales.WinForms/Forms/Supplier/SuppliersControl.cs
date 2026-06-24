@@ -31,6 +31,11 @@ namespace TechSales.WinForms.Forms.Supplier
             LoadSuppliers();
         }
 
+        private void dgvSuppliers_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvSuppliers.ClearSelection();
+        }
+
         private void ConfigureGrid()
         {
             dgvSuppliers.EnableHeadersVisualStyles = false;

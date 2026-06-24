@@ -24,6 +24,11 @@ namespace TechSales.WinForms.Forms
             LoadProducts();
         }
 
+        private void dgvProducts_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvProducts.ClearSelection();
+        }
+
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             var form = new AddProductForm(_db);

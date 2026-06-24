@@ -3,7 +3,7 @@
     public enum InvoiceStatus
     {
         Unpaid = 1,
-        PartiallyPaid = 2,
+        Partial = 2,
         Paid = 3
     }
 }

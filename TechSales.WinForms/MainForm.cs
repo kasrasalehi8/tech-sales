@@ -5,6 +5,7 @@ using TechSales.Infrastructure.Persistence;
 using TechSales.WinForms.Forms;
 using TechSales.WinForms.Forms.Customer;
 using TechSales.WinForms.Forms.Supplier;
+using TechSales.WinForms.Forms.Invoice;
 
 namespace TechSales.WinForms
 {
@@ -41,6 +42,10 @@ namespace TechSales.WinForms
             pnlCustomers.Click += PnlCustomers_Click;
             lblCustomers.Click += PnlCustomers_Click;
             iconCustomers.Click += PnlCustomers_Click;
+
+            pnlInvoices.Click += PnlInvoices_Click;
+            lblInvoices.Click += PnlInvoices_Click;
+            iconInvoices.Click += PnlInvoices_Click;
 
             pnlSuppliers.Click += PnlSuppliers_Click;
             lblSuppliers.Click += PnlSuppliers_Click;
@@ -113,6 +118,11 @@ namespace TechSales.WinForms
         private void PnlCustomers_Click(object? sender, EventArgs e)
         {
             LoadControl(new CustomersControl(_db));
+        }
+
+        private void PnlInvoices_Click(object? sender, EventArgs e)
+        {
+            LoadControl(new InvoicesControl(_db));
         }
 
         private void PnlSuppliers_Click(object? sender, EventArgs e)
