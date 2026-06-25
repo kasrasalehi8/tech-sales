@@ -4,13 +4,6 @@ TechSales is a desktop sales and inventory management application built with Win
 
 The application allows businesses to manage products, customers, invoices, payments, and inventory transactions through a modern desktop interface backed by SQL Server.
 
-The application follows a layered architecture:
-
-- **TechSales.WinForms** – User interface and presentation layer
-- **TechSales.Application** – Business logic and application services
-- **TechSales.Infrastructure** – Entity Framework Core, persistence, and database access
-- **TechSales.Domain** – Shared domain models and enums
-
 ---
 
 # Setup Instructions
