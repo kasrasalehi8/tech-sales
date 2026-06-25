@@ -10,6 +10,12 @@ namespace TechSales.WinForms
         [STAThread]
         static void Main()
         {
+            System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+
+            System.Windows.Forms.Application.EnableVisualStyles();
+
+            System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+
             var services = new ServiceCollection();
 
             var config = new ConfigurationBuilder()
@@ -19,7 +25,8 @@ namespace TechSales.WinForms
             services.AddSingleton<IConfiguration>(config);
 
             services.AddDbContext<TechSalesDbContext>(options =>
-                options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(
+                    config.GetConnectionString("DefaultConnection")));
 
             var provider = services.BuildServiceProvider();
 
