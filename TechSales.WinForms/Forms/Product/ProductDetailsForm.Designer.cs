@@ -41,8 +41,12 @@
             lblStockValue = new Label();
             lblStatusValue = new Label();
             btnDelete = new Button();
+            numAddStock = new NumericUpDown();
+            lblAddStockTitle = new Label();
+            btnSave = new Button();
+            btnCancel = new Button();
+            ((System.ComponentModel.ISupportInitialize)numAddStock).BeginInit();
             SuspendLayout();
-            StartPosition = FormStartPosition.CenterParent;
             // 
             // lblNameTitle
             // 
@@ -196,7 +200,7 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(114, 195);
+            btnDelete.Location = new Point(125, 246);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(80, 35);
             btnDelete.TabIndex = 14;
@@ -204,12 +208,67 @@
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
+            // numAddStock
+            // 
+            numAddStock.Location = new Point(77, 190);
+            numAddStock.Name = "numAddStock";
+            numAddStock.Size = new Size(120, 23);
+            numAddStock.TabIndex = 15;
+            // 
+            // lblAddStockTitle
+            // 
+            lblAddStockTitle.AutoSize = true;
+            lblAddStockTitle.BackColor = Color.Transparent;
+            lblAddStockTitle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAddStockTitle.ForeColor = Color.FromArgb(64, 64, 64);
+            lblAddStockTitle.Location = new Point(12, 190);
+            lblAddStockTitle.Name = "lblAddStockTitle";
+            lblAddStockTitle.Size = new Size(59, 21);
+            lblAddStockTitle.TabIndex = 16;
+            lblAddStockTitle.Text = "Status:";
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(3, 38, 53);
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.FlatAppearance.BorderColor = Color.FromArgb(3, 38, 53);
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(224, 190);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(73, 23);
+            btnSave.TabIndex = 63;
+            btnSave.Text = "+ Add";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnAddStock_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.White;
+            btnCancel.Cursor = Cursors.Hand;
+            btnCancel.FlatAppearance.BorderColor = Color.FromArgb(3, 38, 53);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancel.ForeColor = Color.FromArgb(3, 38, 53);
+            btnCancel.Location = new Point(217, 246);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(80, 35);
+            btnCancel.TabIndex = 64;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // ProductDetailsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(309, 242);
+            ClientSize = new Size(309, 293);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
+            Controls.Add(lblAddStockTitle);
+            Controls.Add(numAddStock);
             Controls.Add(btnDelete);
             Controls.Add(lblStatusValue);
             Controls.Add(lblStockValue);
@@ -225,7 +284,9 @@
             Controls.Add(lblNameTitle);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "ProductDetailsForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Product Details";
+            ((System.ComponentModel.ISupportInitialize)numAddStock).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,5 +306,9 @@
         private Label lblStockValue;
         private Label lblStatusValue;
         private Button btnDelete;
+        private NumericUpDown numAddStock;
+        private Label lblAddStockTitle;
+        private Button btnSave;
+        private Button btnCancel;
     }
 }

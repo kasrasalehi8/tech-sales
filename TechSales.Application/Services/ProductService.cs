@@ -32,7 +32,7 @@ namespace TechSales.Application.Services
             return _db.Products
                 .Include(p => p.Category)
                 .Include(p => p.Supplier)
-                .FirstOrDefault(p => p.Id == id && p.IsActive);
+                .FirstOrDefault(p => p.Id == id);
         }
 
         public void Add(AddProductDto productDto)

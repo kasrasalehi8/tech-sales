@@ -61,7 +61,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvCustomers.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvCustomers.Location = new Point(18, 136);
+            dgvCustomers.Location = new Point(18, 116);
             dgvCustomers.MultiSelect = false;
             dgvCustomers.Name = "dgvCustomers";
             dgvCustomers.ReadOnly = true;
@@ -79,7 +79,7 @@
             lblSearch.BackColor = Color.Transparent;
             lblSearch.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSearch.Location = new Point(422, 96);
+            lblSearch.Location = new Point(422, 76);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(76, 25);
             lblSearch.TabIndex = 7;
@@ -93,7 +93,7 @@
             btnAddCustomer.FlatAppearance.BorderSize = 0;
             btnAddCustomer.FlatStyle = FlatStyle.Flat;
             btnAddCustomer.ForeColor = Color.White;
-            btnAddCustomer.Location = new Point(18, 94);
+            btnAddCustomer.Location = new Point(18, 74);
             btnAddCustomer.Name = "btnAddCustomer";
             btnAddCustomer.Size = new Size(121, 29);
             btnAddCustomer.TabIndex = 6;
@@ -106,7 +106,7 @@
             lblCustomers.AutoSize = true;
             lblCustomers.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCustomers.ForeColor = Color.FromArgb(3, 38, 53);
-            lblCustomers.Location = new Point(8, 23);
+            lblCustomers.Location = new Point(8, 3);
             lblCustomers.Name = "lblCustomers";
             lblCustomers.Size = new Size(153, 37);
             lblCustomers.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             txtSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            txtSearch.Location = new Point(500, 94);
+            txtSearch.Location = new Point(500, 74);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(185, 29);
             txtSearch.TabIndex = 8;

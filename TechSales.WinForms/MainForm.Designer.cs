@@ -48,9 +48,6 @@
             TechSales = new Label();
             mainMenu = new Label();
             salesManagementDashboard = new Label();
-            topbar = new Panel();
-            lblWelcomeText = new Label();
-            userIcon = new FontAwesome.Sharp.IconPictureBox();
             mainPanel = new Panel();
             sidebar.SuspendLayout();
             pnlSuppliers.SuspendLayout();
@@ -64,8 +61,6 @@
             pnlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconDashboard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            topbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)userIcon).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -315,55 +310,13 @@
             salesManagementDashboard.TabIndex = 2;
             salesManagementDashboard.Text = "Sales Management App";
             // 
-            // topbar
-            // 
-            topbar.BackColor = SystemColors.ControlLightLight;
-            topbar.Controls.Add(lblWelcomeText);
-            topbar.Controls.Add(userIcon);
-            topbar.Dock = DockStyle.Top;
-            topbar.Location = new Point(154, 0);
-            topbar.Margin = new Padding(3, 2, 3, 2);
-            topbar.Name = "topbar";
-            topbar.Size = new Size(705, 41);
-            topbar.TabIndex = 2;
-            // 
-            // lblWelcomeText
-            // 
-            lblWelcomeText.AutoSize = true;
-            lblWelcomeText.BackColor = Color.Transparent;
-            lblWelcomeText.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWelcomeText.ForeColor = Color.FromArgb(3, 38, 53);
-            lblWelcomeText.Location = new Point(10, 7);
-            lblWelcomeText.Name = "lblWelcomeText";
-            lblWelcomeText.Size = new Size(137, 25);
-            lblWelcomeText.TabIndex = 1;
-            lblWelcomeText.Text = "Welcome Back";
-            lblWelcomeText.Click += label1_Click_2;
-            // 
-            // userIcon
-            // 
-            userIcon.BackColor = SystemColors.ControlLightLight;
-            userIcon.ForeColor = Color.FromArgb(3, 38, 53);
-            userIcon.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            userIcon.IconColor = Color.FromArgb(3, 38, 53);
-            userIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            userIcon.IconSize = 37;
-            userIcon.Location = new Point(652, 4);
-            userIcon.Margin = new Padding(3, 2, 3, 2);
-            userIcon.Name = "userIcon";
-            userIcon.Size = new Size(52, 37);
-            userIcon.SizeMode = PictureBoxSizeMode.CenterImage;
-            userIcon.TabIndex = 0;
-            userIcon.TabStop = false;
-            userIcon.Click += iconPictureBox2_Click;
-            // 
             // mainPanel
             // 
             mainPanel.Dock = DockStyle.Fill;
-            mainPanel.Location = new Point(154, 41);
+            mainPanel.Location = new Point(154, 0);
             mainPanel.Margin = new Padding(3, 2, 3, 2);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(705, 509);
+            mainPanel.Size = new Size(705, 550);
             mainPanel.TabIndex = 3;
             // 
             // MainForm
@@ -373,14 +326,14 @@
             BackColor = SystemColors.InactiveBorder;
             ClientSize = new Size(859, 550);
             Controls.Add(mainPanel);
-            Controls.Add(topbar);
             Controls.Add(sidebar);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "MainForm";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Tech Sales";
             Load += MainForm_Load;
             sidebar.ResumeLayout(false);
             sidebar.PerformLayout();
@@ -400,18 +353,13 @@
             pnlDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconDashboard).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            topbar.ResumeLayout(false);
-            topbar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)userIcon).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Panel sidebar;
-        private Panel topbar;
         private Label salesManagementDashboard;
         private Label mainMenu;
-        private FontAwesome.Sharp.IconPictureBox userIcon;
         private Panel mainPanel;
         private Label TechSales;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
@@ -430,6 +378,5 @@
         private Panel pnlSuppliers;
         private Label lblSuppliers;
         private FontAwesome.Sharp.IconPictureBox iconSuppliers;
-        private Label lblWelcomeText;
     }
 }

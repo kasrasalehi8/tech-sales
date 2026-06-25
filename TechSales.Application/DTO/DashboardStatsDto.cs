@@ -15,5 +15,7 @@
         public int PaidInvoices { get; set; }
 
         public int UnpaidInvoices { get; set; }
+
+        public int LowStockProducts { get; set; }
     }
 }

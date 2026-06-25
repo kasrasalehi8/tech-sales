@@ -61,7 +61,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvInvoices.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvInvoices.Location = new Point(18, 136);
+            dgvInvoices.Location = new Point(18, 116);
             dgvInvoices.MultiSelect = false;
             dgvInvoices.Name = "dgvInvoices";
             dgvInvoices.ReadOnly = true;
@@ -80,7 +80,7 @@
             lblSearch.BackColor = Color.Transparent;
             lblSearch.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSearch.Location = new Point(422, 96);
+            lblSearch.Location = new Point(422, 76);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(76, 25);
             lblSearch.TabIndex = 8;
@@ -94,7 +94,7 @@
             btnCreateInvoice.FlatAppearance.BorderSize = 0;
             btnCreateInvoice.FlatStyle = FlatStyle.Flat;
             btnCreateInvoice.ForeColor = Color.White;
-            btnCreateInvoice.Location = new Point(18, 94);
+            btnCreateInvoice.Location = new Point(18, 74);
             btnCreateInvoice.Name = "btnCreateInvoice";
             btnCreateInvoice.Size = new Size(121, 29);
             btnCreateInvoice.TabIndex = 7;
@@ -106,7 +106,7 @@
             // 
             txtSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            txtSearch.Location = new Point(500, 94);
+            txtSearch.Location = new Point(500, 74);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(185, 29);
             txtSearch.TabIndex = 6;
@@ -117,7 +117,7 @@
             lblInvoices.AutoSize = true;
             lblInvoices.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblInvoices.ForeColor = Color.FromArgb(3, 38, 53);
-            lblInvoices.Location = new Point(8, 23);
+            lblInvoices.Location = new Point(8, 3);
             lblInvoices.Name = "lblInvoices";
             lblInvoices.Size = new Size(122, 37);
             lblInvoices.TabIndex = 5;

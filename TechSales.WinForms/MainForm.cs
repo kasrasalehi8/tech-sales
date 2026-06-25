@@ -137,11 +137,34 @@ namespace TechSales.WinForms
 
         private void LoadControl(UserControl control)
         {
+            if (control is DashboardControl dashboard)
+            {
+                dashboard.NavigationRequested += DashboardNavigationRequested;
+            }
+
             mainPanel.Controls.Clear();
 
             control.Dock = DockStyle.Fill;
 
             mainPanel.Controls.Add(control);
+        }
+
+        private void DashboardNavigationRequested(string page)
+        {
+            switch (page)
+            {
+                case "Products":
+                    LoadControl(new ProductsControl(_db));
+                    break;
+
+                case "Customers":
+                    LoadControl(new CustomersControl(_db));
+                    break;
+
+                case "Invoices":
+                    LoadControl(new InvoicesControl(_db));
+                    break;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

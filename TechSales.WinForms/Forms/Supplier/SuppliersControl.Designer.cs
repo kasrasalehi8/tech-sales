@@ -42,7 +42,7 @@
             // 
             txtSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            txtSearch.Location = new Point(500, 94);
+            txtSearch.Location = new Point(500, 74);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(185, 29);
             txtSearch.TabIndex = 13;
@@ -71,7 +71,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvSuppliers.Location = new Point(18, 136);
+            dgvSuppliers.Location = new Point(18, 116);
             dgvSuppliers.MultiSelect = false;
             dgvSuppliers.Name = "dgvSuppliers";
             dgvSuppliers.ReadOnly = true;
@@ -89,7 +89,7 @@
             lblSearch.BackColor = Color.Transparent;
             lblSearch.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSearch.Location = new Point(422, 96);
+            lblSearch.Location = new Point(422, 76);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(76, 25);
             lblSearch.TabIndex = 12;
@@ -103,7 +103,7 @@
             btnAddSupplier.FlatAppearance.BorderSize = 0;
             btnAddSupplier.FlatStyle = FlatStyle.Flat;
             btnAddSupplier.ForeColor = Color.White;
-            btnAddSupplier.Location = new Point(18, 94);
+            btnAddSupplier.Location = new Point(18, 74);
             btnAddSupplier.Name = "btnAddSupplier";
             btnAddSupplier.Size = new Size(121, 29);
             btnAddSupplier.TabIndex = 11;
@@ -116,7 +116,7 @@
             lblSuppliers.AutoSize = true;
             lblSuppliers.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSuppliers.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSuppliers.Location = new Point(8, 23);
+            lblSuppliers.Location = new Point(8, 3);
             lblSuppliers.Name = "lblSuppliers";
             lblSuppliers.Size = new Size(136, 37);
             lblSuppliers.TabIndex = 10;
