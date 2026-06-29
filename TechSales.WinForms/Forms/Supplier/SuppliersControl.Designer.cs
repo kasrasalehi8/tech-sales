@@ -42,9 +42,10 @@
             // 
             txtSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            txtSearch.Location = new Point(500, 74);
+            txtSearch.Location = new Point(571, 99);
+            txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(185, 29);
+            txtSearch.Size = new Size(211, 34);
             txtSearch.TabIndex = 13;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -71,14 +72,15 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvSuppliers.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvSuppliers.Location = new Point(18, 116);
+            dgvSuppliers.Location = new Point(21, 155);
+            dgvSuppliers.Margin = new Padding(3, 4, 3, 4);
             dgvSuppliers.MultiSelect = false;
             dgvSuppliers.Name = "dgvSuppliers";
             dgvSuppliers.ReadOnly = true;
             dgvSuppliers.RowHeadersVisible = false;
             dgvSuppliers.RowHeadersWidth = 51;
             dgvSuppliers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSuppliers.Size = new Size(666, 313);
+            dgvSuppliers.Size = new Size(761, 417);
             dgvSuppliers.TabIndex = 9;
             dgvSuppliers.CellDoubleClick += dgvSuppliers_CellDoubleClick;
             dgvSuppliers.DataBindingComplete += dgvSuppliers_DataBindingComplete;
@@ -89,9 +91,9 @@
             lblSearch.BackColor = Color.Transparent;
             lblSearch.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSearch.Location = new Point(422, 76);
+            lblSearch.Location = new Point(472, 101);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(76, 25);
+            lblSearch.Size = new Size(96, 32);
             lblSearch.TabIndex = 12;
             lblSearch.Text = "Search:";
             // 
@@ -103,9 +105,10 @@
             btnAddSupplier.FlatAppearance.BorderSize = 0;
             btnAddSupplier.FlatStyle = FlatStyle.Flat;
             btnAddSupplier.ForeColor = Color.White;
-            btnAddSupplier.Location = new Point(18, 74);
+            btnAddSupplier.Location = new Point(21, 99);
+            btnAddSupplier.Margin = new Padding(3, 4, 3, 4);
             btnAddSupplier.Name = "btnAddSupplier";
-            btnAddSupplier.Size = new Size(121, 29);
+            btnAddSupplier.Size = new Size(138, 39);
             btnAddSupplier.TabIndex = 11;
             btnAddSupplier.Text = "+ Add Supplier";
             btnAddSupplier.UseVisualStyleBackColor = false;
@@ -116,15 +119,15 @@
             lblSuppliers.AutoSize = true;
             lblSuppliers.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSuppliers.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSuppliers.Location = new Point(8, 3);
+            lblSuppliers.Location = new Point(9, 4);
             lblSuppliers.Name = "lblSuppliers";
-            lblSuppliers.Size = new Size(136, 37);
+            lblSuppliers.Size = new Size(169, 46);
             lblSuppliers.TabIndex = 10;
             lblSuppliers.Text = "Suppliers";
             // 
             // SuppliersControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
             Controls.Add(txtSearch);
@@ -132,8 +135,9 @@
             Controls.Add(lblSearch);
             Controls.Add(btnAddSupplier);
             Controls.Add(lblSuppliers);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SuppliersControl";
-            Size = new Size(725, 725);
+            Size = new Size(829, 967);
             ((System.ComponentModel.ISupportInitialize)dgvSuppliers).EndInit();
             ResumeLayout(false);
             PerformLayout();

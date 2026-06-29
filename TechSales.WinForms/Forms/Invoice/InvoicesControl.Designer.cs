@@ -61,14 +61,15 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvInvoices.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvInvoices.Location = new Point(18, 116);
+            dgvInvoices.Location = new Point(21, 155);
+            dgvInvoices.Margin = new Padding(3, 4, 3, 4);
             dgvInvoices.MultiSelect = false;
             dgvInvoices.Name = "dgvInvoices";
             dgvInvoices.ReadOnly = true;
             dgvInvoices.RowHeadersVisible = false;
             dgvInvoices.RowHeadersWidth = 51;
             dgvInvoices.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvInvoices.Size = new Size(666, 313);
+            dgvInvoices.Size = new Size(761, 417);
             dgvInvoices.TabIndex = 4;
             dgvInvoices.CellDoubleClick += dgvInvoices_CellDoubleClick;
             dgvInvoices.CellFormatting += dgvInvoices_CellFormatting;
@@ -80,9 +81,9 @@
             lblSearch.BackColor = Color.Transparent;
             lblSearch.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSearch.Location = new Point(422, 76);
+            lblSearch.Location = new Point(472, 101);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(76, 25);
+            lblSearch.Size = new Size(96, 32);
             lblSearch.TabIndex = 8;
             lblSearch.Text = "Search:";
             // 
@@ -94,9 +95,10 @@
             btnCreateInvoice.FlatAppearance.BorderSize = 0;
             btnCreateInvoice.FlatStyle = FlatStyle.Flat;
             btnCreateInvoice.ForeColor = Color.White;
-            btnCreateInvoice.Location = new Point(18, 74);
+            btnCreateInvoice.Location = new Point(21, 99);
+            btnCreateInvoice.Margin = new Padding(3, 4, 3, 4);
             btnCreateInvoice.Name = "btnCreateInvoice";
-            btnCreateInvoice.Size = new Size(121, 29);
+            btnCreateInvoice.Size = new Size(138, 39);
             btnCreateInvoice.TabIndex = 7;
             btnCreateInvoice.Text = "+ Create Invoice";
             btnCreateInvoice.UseVisualStyleBackColor = false;
@@ -106,9 +108,10 @@
             // 
             txtSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            txtSearch.Location = new Point(500, 74);
+            txtSearch.Location = new Point(571, 99);
+            txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(185, 29);
+            txtSearch.Size = new Size(211, 34);
             txtSearch.TabIndex = 6;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -117,15 +120,15 @@
             lblInvoices.AutoSize = true;
             lblInvoices.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblInvoices.ForeColor = Color.FromArgb(3, 38, 53);
-            lblInvoices.Location = new Point(8, 3);
+            lblInvoices.Location = new Point(9, 4);
             lblInvoices.Name = "lblInvoices";
-            lblInvoices.Size = new Size(122, 37);
+            lblInvoices.Size = new Size(150, 46);
             lblInvoices.TabIndex = 5;
             lblInvoices.Text = "Invoices";
             // 
             // InvoicesControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveBorder;
             Controls.Add(dgvInvoices);
@@ -133,8 +136,9 @@
             Controls.Add(btnCreateInvoice);
             Controls.Add(txtSearch);
             Controls.Add(lblInvoices);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "InvoicesControl";
-            Size = new Size(725, 725);
+            Size = new Size(829, 967);
             ((System.ComponentModel.ISupportInitialize)dgvInvoices).EndInit();
             ResumeLayout(false);
             PerformLayout();

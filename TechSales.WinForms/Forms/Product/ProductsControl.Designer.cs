@@ -43,9 +43,9 @@
             lblProducts.AutoSize = true;
             lblProducts.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProducts.ForeColor = Color.FromArgb(3, 38, 53);
-            lblProducts.Location = new Point(8, 3);
+            lblProducts.Location = new Point(9, 4);
             lblProducts.Name = "lblProducts";
-            lblProducts.Size = new Size(131, 37);
+            lblProducts.Size = new Size(162, 46);
             lblProducts.TabIndex = 0;
             lblProducts.Text = "Products";
             // 
@@ -53,9 +53,10 @@
             // 
             txtSearch.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            txtSearch.Location = new Point(500, 74);
+            txtSearch.Location = new Point(571, 99);
+            txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(185, 29);
+            txtSearch.Size = new Size(211, 34);
             txtSearch.TabIndex = 1;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -67,9 +68,10 @@
             btnAddProduct.FlatAppearance.BorderSize = 0;
             btnAddProduct.FlatStyle = FlatStyle.Flat;
             btnAddProduct.ForeColor = Color.White;
-            btnAddProduct.Location = new Point(18, 74);
+            btnAddProduct.Location = new Point(21, 99);
+            btnAddProduct.Margin = new Padding(3, 4, 3, 4);
             btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(121, 29);
+            btnAddProduct.Size = new Size(138, 39);
             btnAddProduct.TabIndex = 2;
             btnAddProduct.Text = "+ Add Product";
             btnAddProduct.UseVisualStyleBackColor = false;
@@ -81,9 +83,9 @@
             lblSearch.BackColor = Color.Transparent;
             lblSearch.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearch.ForeColor = Color.FromArgb(3, 38, 53);
-            lblSearch.Location = new Point(422, 76);
+            lblSearch.Location = new Point(472, 101);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(76, 25);
+            lblSearch.Size = new Size(96, 32);
             lblSearch.TabIndex = 3;
             lblSearch.Text = "Search:";
             // 
@@ -110,20 +112,21 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvProducts.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvProducts.Location = new Point(18, 116);
+            dgvProducts.Location = new Point(21, 155);
+            dgvProducts.Margin = new Padding(3, 4, 3, 4);
             dgvProducts.MultiSelect = false;
             dgvProducts.Name = "dgvProducts";
             dgvProducts.ReadOnly = true;
             dgvProducts.RowHeadersVisible = false;
             dgvProducts.RowHeadersWidth = 51;
             dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProducts.Size = new Size(666, 313);
+            dgvProducts.Size = new Size(761, 417);
             dgvProducts.TabIndex = 0;
             dgvProducts.DataBindingComplete += dgvProducts_DataBindingComplete;
             // 
             // ProductsControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.InactiveBorder;
@@ -132,8 +135,9 @@
             Controls.Add(btnAddProduct);
             Controls.Add(txtSearch);
             Controls.Add(lblProducts);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ProductsControl";
-            Size = new Size(725, 725);
+            Size = new Size(829, 967);
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ResumeLayout(false);
             PerformLayout();
